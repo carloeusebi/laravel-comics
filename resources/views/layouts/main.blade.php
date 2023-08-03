@@ -7,6 +7,13 @@
   <title>Laravel Comics</title>
   <link href="{{ Vite::asset('resources/img/favicon.ico') }}" rel="icon" type="image/ico">
   <script defer src="{{ Vite::asset('resources/js/app.js')}}" type="module"></script>
+
+  {{-- To hide html before scss gets compiled --}}
+<style>
+  body{
+    display: none;
+  }
+</style>
 </head>
 <body>
 

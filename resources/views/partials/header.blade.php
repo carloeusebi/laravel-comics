@@ -1,3 +1,7 @@
+@php
+  $navbar_links = config('navbar')
+@endphp
+
 <header>
   <div class="container">
     <figure>
@@ -5,7 +9,16 @@
   </figure>
   <nav>
     <ul>
-      <li><a href="#">temp</a></li>
+      @foreach($navbar_links as $link)        
+        <li>
+          <a 
+            href={{ route($link['url'])}}
+            {{ Route::is($link['url']) ? 'class=active' : ''}}
+          >
+            {{ $link['text']}}
+          </a>
+      </li>
+      @endforeach
     </ul>
   </nav>
   </div>
