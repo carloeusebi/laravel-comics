@@ -1,5 +1,6 @@
 import "./bootstrap";
 import "~resources/scss/app.scss";
-import * as bootstrap from "bootstrap";
+import "@fontsource/open-sans";
+import "@fontsource/open-sans-condensed/";
 
 import.meta.glob(["../img/**"]);

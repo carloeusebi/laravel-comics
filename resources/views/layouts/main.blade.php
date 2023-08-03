@@ -20,7 +20,9 @@
   @include('../partials/header')
   @include('../partials/jumbo')
 
-  @yield('main-content')
+  <main>
+    @yield('main-content')
+  </main>
 
   @include('../partials/footer')
 </body>

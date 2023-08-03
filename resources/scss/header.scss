@@ -11,6 +11,11 @@ header {
         display: flex;
         justify-content: space-between;
     }
+
+    //logo
+    figure {
+        margin: 0.5rem 0;
+    }
 }
 
 nav {
@@ -45,8 +50,4 @@ nav {
             border-bottom: 5px solid $dc_blue;
         }
     }
-}
-
-figure {
-    margin: 0.5rem 0;
 }
