@@ -17,12 +17,16 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::prefix('/comics')->name('comics')->group(function () {
-    Route::get('/comics', function () {
+Route::prefix('/comics')->group(function () {
+    Route::get('/', function () {
         $comics = config('comics');
         $shop_items = config('shop');
         return view('comics.list', compact('comics', 'shop_items'));
-    });
+    })->name('comics');
+
+    Route::get('/{index}', function ($index) {
+        return view('comics.details', compact('index'));
+    })->name('comics.details');
 });
 
 
