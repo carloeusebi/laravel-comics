@@ -49,6 +49,19 @@ h4 {
     .blue-stripe {
         background-color: #0282f9;
         height: 75px;
+        .nav-links {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 0.33rem;
+
+            font-weight: bold;
+            color: white;
+
+            a {
+                color: white;
+            }
+        }
     }
 
     .wrapper {

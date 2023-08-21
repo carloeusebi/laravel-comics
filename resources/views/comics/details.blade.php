@@ -9,7 +9,19 @@
 
 @section('main-content')
     <section id="comic-details">
-        <div class="blue-stripe"></div>
+        <div class="blue-stripe">
+            <div class="nav-links container">
+                @isset($prev)
+                    <a href="{{ route('comics.details', $prev) }}">PREV COMIC</a>
+                @endisset
+                @if (isset($prev) && isset($next))
+                    <span>|</span>
+                @endif
+                @isset($next)
+                    <a href="{{ route('comics.details', $next) }}">NEXT COMIC</a>
+                @endisset
+            </div>
+        </div>
 
         <div class="container">
             <div class="comic-cover">

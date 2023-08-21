@@ -27,7 +27,18 @@ Route::prefix('/comics')->group(function () {
     Route::get('/{index}', function ($index) {
         $comics = config('comics');
         $comic = $comics[$index];
-        return view('comics.details', compact('comic'));
+
+        $data = ['comic' => $comic];
+
+        /**
+         * @var $last_comic_index The index of the last comic
+         */
+        $last_comic_index = count($comics) - 1;
+
+        if ($index > 0) $data['prev'] = --$index;
+        if ($index < $last_comic_index) $data['next'] = ++$index;
+
+        return view('comics.details', $data);
     })->name('comics.details');
 });
 
