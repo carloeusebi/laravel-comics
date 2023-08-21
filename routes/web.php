@@ -25,7 +25,9 @@ Route::prefix('/comics')->group(function () {
     })->name('comics');
 
     Route::get('/{index}', function ($index) {
-        return view('comics.details', compact('index'));
+        $comics = config('comics');
+        $comic = $comics[$index];
+        return view('comics.details', compact('comic'));
     })->name('comics.details');
 });
 
