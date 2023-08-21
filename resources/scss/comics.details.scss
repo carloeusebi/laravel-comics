@@ -19,6 +19,38 @@ h4 {
 }
 
 #comic-details {
+    position: relative;
+
+    .comic-cover {
+        position: absolute;
+        width: 175px;
+        height: 275px;
+        top: -225px;
+        border: 2px solid white;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-link {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: white;
+            background-color: #00a9d9;
+            font-size: 0.75rem;
+        }
+    }
+
+    .blue-stripe {
+        background-color: #0282f9;
+        height: 75px;
+    }
+
     .wrapper {
         margin: 4rem 0;
         display: flex;
@@ -100,6 +132,7 @@ h4 {
         display: flex;
         border-top: 1px solid #ccc;
         padding: 0.5rem 0;
+        font-size: 0.85rem;
 
         &:last-child {
             margin-bottom: 1px solid #ccc;

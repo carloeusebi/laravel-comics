@@ -9,6 +9,14 @@
 
 @section('main-content')
     <section id="comic-details">
+        <div class="blue-stripe"></div>
+
+        <div class="container">
+            <div class="comic-cover">
+                <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+                <a class="gallery-link" href="{{ route('comics') }}">VIEW GALLERY</a>
+            </div>
+        </div>
 
         <div class="container">
             <div class="wrapper">
