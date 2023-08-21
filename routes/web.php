@@ -35,8 +35,8 @@ Route::prefix('/comics')->group(function () {
          */
         $last_comic_index = count($comics) - 1;
 
-        if ($index > 0) $data['prev'] = --$index;
-        if ($index < $last_comic_index) $data['next'] = ++$index;
+        if ($index > 0) $data['prev'] = $index - 1;
+        if ($index < $last_comic_index) $data['next'] = $index + 1;
 
         return view('comics.details', $data);
     })->name('comics.details');
