@@ -14,10 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $comics = config('comics');
-    $shop_items = config('shop');
-    return view('comics', compact('comics', 'shop_items'));
-})->name('comics');
+    return view('home');
+})->name('home');
+
+Route::prefix('/comics')->name('comics')->group(function () {
+    Route::get('/comics', function () {
+        $comics = config('comics');
+        $shop_items = config('shop');
+        return view('comics.list', compact('comics', 'shop_items'));
+    });
+});
 
 
 Route::get('/characters', function () {
